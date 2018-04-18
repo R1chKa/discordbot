@@ -43,7 +43,7 @@ bot.on("message", function(user, userID, channelID, message, evt) {
         bot.sendMessage({
           to: channelID,
           message:
-            "**!help** - display all commands\n**!roll** - roll number 0-100\n**!choose [] []..** - choose random one"
+            "**!help** - display all commands\n**!roll** - roll number 0-100\n**!choose [] []..** - choose random one\n**!ts** - display TeamSpeak3 server"
         });
         break;
 
@@ -58,6 +58,13 @@ bot.on("message", function(user, userID, channelID, message, evt) {
         bot.sendMessage({
           to: channelID,
           message: randItem(args)
+        });
+        break;
+        
+        case "ts":
+        bot.sendMessage({
+          to: channelID,
+          message: "TeamSpeak3 server IP - 46.8.158.62:11183"
         });
         break;
     }
