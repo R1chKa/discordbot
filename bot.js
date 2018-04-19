@@ -38,12 +38,26 @@ bot.on("message", function(user, userID, channelID, message, evt) {
     var randItem = function(arr) {
       return arr[Math.floor(Math.random() * arr.length)];
     };
+    var answers = ['Можливо.', 'Звичайно ні.', 'Я сподіваюся, що так.', 'Так!', 
+  'Не в твоїх диких снах.',  'Цілком імовірно.', 'Беззаперечно', 'Я не впевнений.',
+  'Я думаю так.', 'Я думаю ні.', 'Ніколи!', 'Без сумнівів.', 'Я впевнений в цьому.',
+  'Агаха! Серйозно?!?', 'Ппффф.',  'Вибач, але ні.', 'Так, чорт візьми.', 'Не надійся.',
+  'Майбутнє похмуре.',  'Майбутнє невизначено.', 'Я не хотів би говорити.',
+  'Яка різниця?', 'Колись, коли-небудь,', 'Є невеликий шанс.', 'Вибач, але так.', 
+  'Знаки кажуть, що так.', 'Ні', 'Поки не зрозуміло, попробуй пізніше.', 'Запитай пізніше.',
+  'Краще тобі не знати.', 'Зараз неможливо це взнати.', 'Я зайнятий, запитай пізніше.',
+  'Навіть не думай.', 'За моїми даними - ні.', 'Дуже сумнівно', 'Незрозуміло.', 'Шансів мало.'];
+    
     switch (cmd) {
       case "help":
         bot.sendMessage({
           to: channelID,
           message:
-            "**!help** - display all commands\n**!roll** - roll number 0-100\n**!choose [] []..** - choose random one\n**!ts** - display TeamSpeak3 server"
+            "**!help** - display all commands\n" +
+            "**!roll** - roll number 0-100\n" +
+            "**!choose [] []..** - choose random one\n" +
+            "**!ts** - display TeamSpeak3 server\n" +
+            "**!8ball [question]** - get an answer"
         });
         break;
 
@@ -61,10 +75,17 @@ bot.on("message", function(user, userID, channelID, message, evt) {
         });
         break;
         
-        case "ts":
+      case "ts":
         bot.sendMessage({
           to: channelID,
           message: "TeamSpeak3 server IP - 46.8.158.62:11183"
+        });
+        break;
+        
+      case "8ball":
+        bot.sendMessage({
+          to: channelID,
+          message: randItem(answers)
         });
         break;
     }
