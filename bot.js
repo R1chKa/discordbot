@@ -70,3 +70,7 @@ bot.on("message", function(user, userID, channelID, message, evt) {
     }
   }
 });
+bot.on('disconnect', function(errMsg, code) {
+  console.log(code + ' ' + errMsg);
+});
+
