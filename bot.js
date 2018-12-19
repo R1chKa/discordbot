@@ -56,7 +56,6 @@ bot.on("message", function(user, userID, channelID, message, evt) {
             "**!help** - display all commands\n" +
             "**!roll** - roll number 0-100\n" +
             "**!choose [] []..** - choose random one\n" +
-            "**!ts** - display TeamSpeak3 server\n" +
             "**!8ball [question]** - get an answer"
         });
         break;
