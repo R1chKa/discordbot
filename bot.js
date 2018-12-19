@@ -75,13 +75,6 @@ bot.on("message", function(user, userID, channelID, message, evt) {
         });
         break;
         
-      case "ts":
-        bot.sendMessage({
-          to: channelID,
-          message: "TeamSpeak3 server IP - 46.8.158.62:11183"
-        });
-        break;
-        
       case "8ball":
         bot.sendMessage({
           to: channelID,
